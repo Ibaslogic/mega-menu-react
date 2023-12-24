@@ -1,1 +1,1 @@
-# React mega menu starter project
+# React mega menu project
