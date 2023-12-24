@@ -29,6 +29,7 @@ ul {
 
 button {
   cursor: pointer;
+  color: var(--mainColor);
 }
 
 .hidden {
