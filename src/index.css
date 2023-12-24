@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainColor: #2b2b2b;
+  --borderColor: #cacaca;
+}
+
+body,
+:root {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ================================ 
+Global
+=======================================*/
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.h-0 {
+  height: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* ================================ 
+End Global
+=======================================*/
+
+.nav__header {
+  position: static;
+  height: 50px;
+  background-color: white;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 50px;
+}
+
+.logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.logo__link img {
+  width: 36px;
+  height: 36px;
+}
+
+.menu_icon {
+  border: none;
+  height: 45px;
+  width: 45px;
+  margin-left: -12px;
+  background-color: transparent;
+}
+
+.menu_icon:focus {
+  outline: none;
+  background-color: #d7d4d4;
+  border-radius: 100px;
+  height: 45px;
+  width: 45px;
+}
+
+.nav_item_content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borderColor);
+  height: 3rem;
+}
+
+.nav_item_content a {
+  color: inherit;
+  width: 100%;
+  font-size: 14.5px;
+  font-weight: 500;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav_item_content button {
+  padding-inline: 0.75rem;
+  border: none;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.register a {
+  font-size: 15px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.register button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--mainColor);
+  border-radius: 50px;
+}
+
+.register .avatar {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+.register .sign {
+  min-width: 64px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-left: 16px;
+}
+
+.dropdown {
+  background-color: #fff;
+}
+
+.dropdown_content {
+  font-size: 0.875rem;
+}
+
+.dropdown_content h4 {
+  font-weight: 700;
+  line-height: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.dropdown_content li {
+  line-height: 1.85rem;
+}
+
+.dropdown_content li a {
+  color: inherit;
+  font-weight: 400;
+}
+
+/* ================================ 
+Hero
+=======================================*/
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #5c5c5c;
+  height: 450px;
+}
+
+.img_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img_wrapper img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0px;
+  color: transparent;
+  object-fit: cover;
+}
+
+.img_wrapper .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(217, 33%, 17%, 0.4);
+}
+
+.hero .content {
+  color: #fff;
+  width: 100%;
+  position: relative;
+}
+
+.hero_title {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+/* ================================ 
+Mobile
+=======================================*/
+.mobile_navigation {
+  position: fixed;
+  z-index: 99;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.drawer_content {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  overflow-y: auto;
+  transition: 0.5s;
+  transform: translateX(-100%);
+}
+
+.drawer_content.active {
+  transform: translateX(0);
+}
+
+.close_drawer {
+  text-align: end;
+  border-bottom: 1px solid var(--borderColor);
+}
+.close_drawer button {
+  padding: 12px;
+  border: none;
+  background-color: white;
+}
+
+/* ================================ 
+MEDIA QUERIES
+=======================================*/
+
+@media (min-width: 480px) {
+  .drawer_content {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 996px) {
+  .container {
+    max-width: 996px;
+  }
+
+  .md\:h-auto {
+    height: auto;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .logo__link {
+    margin-right: 1rem;
+  }
+
+  .nav__container > nav > ul {
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+  }
+
+  .nav_item_content {
+    border-style: none;
+    height: auto;
+  }
+
+  .nav_item_content a {
+    padding-inline: 0.7rem;
+  }
+
+  .nav_item_content .md\:hidden {
+    display: none;
+  }
+
+  .register {
+    margin-left: auto;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-bottom: 1px solid var(--borderColor);
+    border-radius: 0 0 16px 16px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    visibility: hidden;
+    z-index: 10;
+  }
+
+  .nav__container ul li:focus-within .dropdown,
+  .nav__container ul li:hover .dropdown {
+    visibility: visible;
+  }
+
+  .nav_item_content:hover a:before,
+  .nav_item_content .active:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid var(--mainColor);
+  }
+
+  .dropdown_content {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dropdown_content h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero_title {
+    font-size: 56px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
