@@ -258,6 +258,7 @@ Mobile
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 280px;
   height: 100vh;
   z-index: 99;
   overflow-y: auto;
@@ -282,12 +283,6 @@ Mobile
 /* ================================ 
 MEDIA QUERIES
 =======================================*/
-
-@media (min-width: 480px) {
-  .drawer_content {
-    width: 300px;
-  }
-}
 
 @media (min-width: 768px) {
   .container {
